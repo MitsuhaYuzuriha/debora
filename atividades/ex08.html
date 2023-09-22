@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 08</title>
+</head>
+<body>
+    <script>
+        let i = 0
+        let n = parseInt(prompt("Digite o valor desejado : "))
+        while(n <= 0){
+            n = parseInt(prompt("Erro ! Digite novamente : "))
+        }
+        if(n > 0){
+            while(i < n){
+                i += 1
+                document.write(`${i} `)
+            }
+        }
+    </script>
+</body>
+</html>

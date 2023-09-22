@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 06</title>
+    
+    <style>
+        #media{
+            border: 1px solid black;
+            width: 20%;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="media">
+        <script>
+            let cont = "S"
+            let aprov = 0
+            const regexTxt = /^[A-Z a-z]+$/
+            const regexNum = /^[0-9.]+$/
+
+            while(cont == "S"){
+                let nome = prompt("Nome do aluno : (A-Z)").toLowerCase();
+                let primlt = nome.charAt(0).toUpperCase()
+                while(regexTxt.test(nome) == false){
+                    nome = prompt("Nome do aluno : (A-Z) ERRO !! Tente novamente !! ")
+                    primlt = nome.charAt(0).toUpperCase()
+                    if(regexTxt.test(nome) == true){
+                        break
+                    }
+                }
+                let n1 = parseFloat(prompt("Digite a primeira nota : (0-10)"))
+                while(n1 < 0 || n1 > 10){
+                    n1 = parseFloat(prompt("ERRO !! Digite novamente a primeira nota : (0-10)"))
+                }
+                while(regexNum.test(n1) == false){
+                    n1 = parseFloat(prompt("ERRO !! Digite novamente a primeira nota : (0-10) "))
+                    if(regexNum.test(n1) == true){
+                        break
+                    }
+                }
+                let n2 = parseFloat(prompt("Digite a segunda nota : (0-10) "))
+                while(n2 < 0 || n2 > 10){
+                    n2 = parseFloat(prompt("ERRO !! Digite novamente a primeira nota : (0-10)"))
+                }
+                while(regexNum.test(n2) == false){
+                    n2 = parseFloat(prompt("ERRO !! Digite novamente a segunda nota : (0-10) "))
+                    if(regexNum.test(n2) == true){
+                        break
+                    }   
+                }
+                let media = (n1 + n2) / 2
+
+                document.write(`Nome do aluno(a) : ${primlt + nome.slice(1)} <br>`)
+                document.write(`Primeira nota : ${n1} <br>`)
+                document.write(`Segunda nota : ${n2} <br>`)
+                document.write(`A média final deste aluno é igual a : ${media} <br>`)
+                if(media >= 9.5){
+                    document.write("Aprovado <br>")
+                    aprov += 1
+                }
+                else{
+                    document.write("Reprovado <br>")
+                }
+                document.write("<hr>")
+                cont = prompt("Quer continuar ? (S/N) : ").toUpperCase();
+                while(cont != "S" && cont != "N"){
+                    cont = prompt("Quer continuar ? (S/N) ").toUpperCase();
+                    if(cont == "N"){
+                        break
+                    }
+                }
+                if(cont == "N"){
+                    break
+                }
+            }
+            document.write(`Quantidade de alunos aprovados : ${aprov}`)
+        </script>
+    </div>
+
+</body>
+</html>

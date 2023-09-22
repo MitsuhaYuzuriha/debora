@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 05</title>
+</head>
+<body>
+    <script>
+        let n1 = parseInt(prompt("Digiteo primeiro número : "))
+        let n2 = parseInt(prompt("Digite o segundo número : "))
+        let n1s = n1, n2s = n2
+        let soma = 0
+        let quant = 0
+
+        forfct = function(){
+            for(n1; n1 <= n2; n1++){
+                soma += n1
+                quant += 1
+            }
+            console.log(soma)
+            console.log(quant)
+            document.write(`A média aritmética entre ${n1s} e ${n2s} é de : ${soma / quant} <br>`)
+            document.write(`A média aritmética entre ${n1s} e ${n2s} é de : ${(n1s + n2s) / 2}`)
+        }
+        
+        if(n1 < n2){
+            forfct()
+        }
+
+        else if(n1 == n2){
+            forfct()
+        }
+
+        else{
+            while(n1 > n2){
+                n1 = parseInt(prompt("Digiteo primeiro número : "))
+                n2 = parseInt(prompt("Digite o segundo número : "))
+                n1s = n1, n2s = n2
+                if(n1 < n2){
+                    for(n1; n1 <= n2; n1++){
+                        soma += n1
+                        quant += 1
+                    }
+                    console.log(soma)
+                    console.log(quant)
+                    document.write(`A média aritmética entre ${n1s} e ${n2s} é de : ${(n1s + n2s) / 2} <br>`)
+                    document.write(`A média aritmética entre ${n1s} e ${n2s} é de : ${soma / quant}`)
+                break
+                }
+            }
+        }   
+    </script>
+</body>
+</html>

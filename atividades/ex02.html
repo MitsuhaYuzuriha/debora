@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 02</title>
+</head>
+<body>
+    <script>
+        let num = 5
+        let contagem = setInterval(function(){
+            if(num == 0){
+                let cont = setInterval(function(){
+                    document.write("Explosão")
+                    clearInterval(cont)
+                }, 1000)
+            }
+            else if(num > 0){
+                document.write(num + "<br>")
+            }
+            else{
+                clearInterval(contagem)
+            }
+            num -= 1
+        }, 1000)
+    </script>
+</body>
+</html>
